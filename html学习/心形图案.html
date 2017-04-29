@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		*{padding: 0;margin: 0;}
+		body{background:url(906249.jpg)}
+		#allbtn
+		{width:auto;height:auto;padding:10px}
+		#adiv
+		{height: auto;width:220px;position: absolute;left: 500px;top: 30px}
+		.squr
+		{height:20px;width:20px;border:1px dashed #BD84E6;background:none;margin:1px;float:left;}
+	</style>
+	<script>
+		window.onload=function()
+		{   
+			var aDiv=document.getElementById('adiv');
+			var squr=document.getElementsByClassName('squr');
+			var myArr=[20,21,23,24,28,29,30,31,32,33,34,37,38,39,40,41,42,43,47,48,49,50,51,57,58,59,67];
+			for(i=0;i<1000;i++){
+				var add=document.createElement('div');
+				aDiv.appendChild(add);
+				add.className='squr';
+			}
+			function toRed () {
+				for(i=0;i<arguments.length;i++){
+					squr[arguments[i]-9].style.background='red';
+				}
+			}
+    /*toRed(20,21,23,24,28,29,30,31,32,
+    33,34,37,38,39,40,41,42,43,47,48,
+    49,50,51,57,58,59,67);*/         //通过函数传参执行事件（后续要进一步探讨如何将数组内容传到函数参数里去）
+    
+/*    for (var x in myArr){
+    	squr[myArr[x]-9].style.background='red';
+    }*/  //通过for循环执行事件（由此可见的for循环中用in可以选定数组中的所有元素，但是要定于一个变量。                                      //这里的x指的是数组中的元素下标（序号）;
+
+    window.setInterval(function(){
+    	for(i=0;i<squr.length;i++){
+    	squr[i].style.background='none';
+    }
+    },500);
+    var j=0;
+    function changenum(){
+    	for(i=0;i<myArr.length;i++){
+    	squr[myArr[i]-9+j].style.background='red';
+    }
+    	j=j+9;
+    }
+    window.setInterval(changenum,500);
+};	
+</script>
+</head>
+<body>
+	<div id="adiv" ></div>   
+</body>
+</html>

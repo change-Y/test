@@ -1,0 +1,111 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="utf-8">
+ 	<title> 自制心形动画</title>
+ 	<style>
+ 		body{padding: 0;margin: 0;  background:#CCFFFF;}
+ 		#adiv1{height:206px; width:208px;margin:50px auto;border: 2px solid purple;position: relative;}
+ 		.squr{height:20px;width:20px;border:1px dashed #BD84E6;background:none;margin:0.5px; float:left;color:white;-webkit-transition:background 0.7s;-o-transition:background 0.7s;-moz-transition:background 0.7s;-ms-transition:background 0.7s;transition:background 0.7s;}
+ 		#bar{height: 2px;background:#FF6666;position: absolute;top: 184px}
+ 		#btn1{width: 209px;margin: 0;background-color:#BD84E6;border-top: 3px solid purple;border-bottom: 2px solid purple;
+ 			border-left: 1px solid purple;position: absolute;top: 186px;color: #3D3DFC;}
+ 		#btn2{border-left: 1px solid purple;background-color:#BD84E6;color: #3D3DFC;margin: 0;position: absolute;top: 206px;width: 209px;display:none;}
+ 	</style>
+ 	<script type="text/javascript">
+	window.onload=function(){   
+		var aDiv=document.getElementById('adiv1');  
+		var btn1=document.getElementById('btn1'); 
+		var btn2=document.getElementById('btn2');  
+		var oDiv=aDiv.getElementsByTagName('div'); 
+		var Bar=document.getElementById('bar');
+		var myarr=[20,21,23,24,28,29,30,31,32, 33,34,37,38,39,40,41,42,43,47,48, 49,50,51,57,58,59,67];
+		for (var i = 0; i < 72; i++) {               
+			var aD=document.createElement('div');    
+			aDiv.insertBefore(aD,oDiv[0]);                     
+		    }
+		btn1.onclick=function begin(){
+			for(i=0;i<oDiv.length-1;i++){
+				oDiv[i].className='squr';                   
+			}
+			setInterval(startbar,21);	
+			btn1.onclick=null;					      
+		    btn1.value='Waiting';                  
+		Begin=setInterval(function(){
+			btn1.value=' I love you！';                  
+		var i=150; var j=1;
+	setTimeout(function () {
+	oDiv[22].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[14].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[15].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[25].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[34].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[42].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[50].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[58].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[48].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[38].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[28].style.background='red';},j*i);j++;				
+	setTimeout(function () {
+	oDiv[19].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[11].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[12].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[49].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[39].style.background='red';
+	oDiv[40].style.background='red';
+	oDiv[41].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[29].style.background='red';
+	oDiv[30].style.background='red';
+	oDiv[31].style.background='red';
+	oDiv[32].style.background='red';
+	oDiv[33].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	oDiv[20].style.background='red';
+	oDiv[21].style.background='red';
+	oDiv[22].style.background='red';
+	oDiv[23].style.background='red';
+	oDiv[24].style.background='red';},j*i);j++;
+	setTimeout(function () {
+	for(var i=0;i<72;i++){
+	oDiv[i].style.background='none';
+	}},4400);
+	},4500);
+	};
+    btn2.onclick=function(){
+	clearInterval(Begin);                                      
+	location.reload();                                         
+	};
+	var bar=0;
+	function startbar(){                                        
+		if(bar<209){
+		Bar.style.width=bar+'px';
+		bar++;	                                                 
+    	}
+	}
+};
+</script>	
+</head>
+<body>
+		<div id="adiv1">
+		    <input id="btn1" type="button" value="Begin";/>
+		    <input id="btn2" type="button" value="Restart";/>
+		    <div id="bar"></div>
+		</div>
+</body>
+</html>
+

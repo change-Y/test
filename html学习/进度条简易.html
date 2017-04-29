@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	*{padding: 0;margin: 0;}
+</style>
+<script type="text/javascript">
+		 var mytimer = null;  var bar = 0;
+		 function processbar() {
+		     if (bar <200) {
+		  bar++; document.getElementById("processbar").style.width = bar + "px";
+		     }
+		 }
+		 function startbar() {
+		     mytimer = window.setInterval(processbar,50);
+		 }
+		 function pausebar() {
+		     window.clearInterval(mytimer);
+		 }
+		 function reset() {
+		     location.reload();
+		 }
+
+ </script>
+</head>
+<body>
+		<div style="width: 200px; height: 10px; border: solid 1px #ccc; padding: 1px;">
+		<div id="processbar" style="background-color: #90EE90; width: 0px; height: 10px;"></div>
+		</div>
+		<input type="button" value="开始" onclick="startbar();" />
+		<input type="button" value="暂停" onclick="pausebar();" />
+		<input type="button" value="重置" onclick="reset();" />
+
+</body>
+</html>

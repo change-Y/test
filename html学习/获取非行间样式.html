@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+	#div1 {height: 100px;width: 100px;background: red;border: 1px solid black;}
+	</style>
+	<script>
+	function getStyle(obj,name)
+	{
+		if(obj.currentStyle)
+		{
+			return obj.currentStyle[name];
+		}
+		else
+		{
+			return getComputedStyle(obj,null)[name];
+		}
+	}
+	window.onload=function()
+	{
+		var oDiv=document.getElementById('div1');
+	    alert(getStyle(oDiv,'width'));
+	    alert(getStyle(oDiv,'borderStyle'));
+	    alert(getStyle(oDiv,'backgroundColor'));
+	}
+//	window.onload=function()
+//	{
+//			var oDiv=document.getElementById('div1');
+//	    if(oDiv.currentStyle)
+//	      {
+//		    alert(oDiv.currentStyle.height)
+//        }
+//	    else
+//	      {		
+//		    alert(getComputedStyle(oDiv,null).height)
+//        }
+//	}
+	</script>
+	</head>
+	<body>
+		<div id="div1">
+		</div>
+	</body>
+</html>

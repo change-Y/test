@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>制作第一个表单</title>
+	</head>
+	<body>
+		<form style="border: solid 1px black; padding: 10px;display: table;">
+			<div>
+			<label for="用户名">用户名：</label>
+			<input type="text" name="用户名" id="用户名" value="admin" />
+			</div>
+			<div>
+			<label for="密码">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+			<input type="password" name="密码" id="密码" value="12345"/>
+			</div>
+			<div>
+			<label for="邮箱">邮&nbsp;&nbsp;&nbsp;&nbsp;箱：</label>
+		    <input type="email" name="邮箱" id="邮箱" placeholder="1504513337" />   
+			<select>
+				<option>@163.com</option>
+				<option>@192.com</option>
+				<option selected="selected">@qq.com</option>
+			</select>
+			</div>
+			性&nbsp;&nbsp;&nbsp;&nbsp;别：
+			<label for="男">男</label>
+			<input type="radio" name="性别" id="男" checked="checked"/>
+			<label for="女">女</label>
+			<input type="radio" name="性别" id="女" /><br />
+			兴&nbsp;&nbsp;&nbsp;&nbsp;趣：
+			<label for="旅游">旅游</label>
+			<input type="checkbox" name="兴趣" id="旅游" checked="checked"/>
+			<label for="摄影">摄影</label>
+			<input type="checkbox" name="兴趣" id="摄影" />
+			<label for="运动">运动</label>
+			<input type="checkbox" name="兴趣" id="运动" checked="checked"/><br />
+			个人介绍：<br />
+			<div id="文本域">
+			<textarea rows="8" cols="37">毛扇指千阵，铁马踏冰河。</textarea>
+			</div>
+			<div id="注册">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="submit" value="注册" />
+			<input type="reset" value="重填" />
+			</div>
+			上传个人照片：
+			<input type="file" />
+		</form>
+	</body>
+</html>

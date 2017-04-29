@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>加减乘除计算器</title>  
+  <script type="text/javascript">
+   function count()
+   {  
+        var txt1=parseInt(document.getElementById("txt1").value);
+	    var txt2=parseInt(document.getElementById("txt2").value);
+	    var selected=document.getElementById("select").value;
+        var fruit=document.getElementById("fruit");
+	switch(selected)
+  {
+    case'+':
+    fruit.value=txt1+txt2;
+    break;
+    case'-':
+    fruit.value=txt1-txt2;
+    break;
+    case'*':
+    fruit.value=txt1*txt2;
+    break;
+    case'/':
+    fruit.value=txt1/txt2;
+  }
+  if(fruit.value=='NaN'){
+    fruit.value='';
+    alert('请输入正确的数值!');
+  }
+  }
+  </script> 
+ </head> 
+ <body>
+   <input type='text' id='txt1' /> 
+   <select id='select'>
+		<option value='+'>+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+   </select><br/>
+   <div id="top" >
+   <input type='text' id='txt2' /> 
+   <input type='button' value=' = ' onclick='count()'/><br/ > 
+   <input type='text' id='fruit'/> 
+   </div>  
+ </body>
+</html>

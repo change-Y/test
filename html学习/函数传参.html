@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>函数传参</title>
+<style>
+#div1{
+		height: 100px;width: 100px;background: red;
+	}
+</style>
+<script>
+function change(name,value)
+{
+	document.getElementById('div1').style[name]=value;
+}
+function Title(title)
+{
+	document.getElementById('div1').title=(title);//传参要用括号。
+}                                 //title='title';输出用单引号。
+function Reset()
+{
+	var reSet=document.getElementById('div1');
+	reSet.style.height='100px';
+	reSet.style.width='100px';
+	reSet.style.background='red';
+	reSet.title='red';
+}
+</script>
+</head>
+<div>
+<input type="button" value="变宽" onclick="change('width','200px');Title('我变宽了')";/>
+<input type="button" value="变高" onclick="change('height','200px');Title('我变高了')";/>
+<input type="button" value="变黄"  onclick="change('background','yellow');Title('我变黄了')";/>
+<input type="button" value="恢复" onclick="Reset();Title('又回到最初的起点，啦啦啦')" />
+</div><br />
+<!--一个事件执行多个函数时用分号隔开-->
+<div id="div1" title="我是红色的"></div>
+<body>
+</body>
+</html>

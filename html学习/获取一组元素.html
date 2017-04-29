@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>获取一组元素</title>
+	<style>
+	#allbtn
+	{width:auto;height:auto;margin-left:-6px;padding:10px;}
+	#adiv
+	{height: auto;width:400px;}
+	#div1,#div2,#div3,#div4,#div5,#div6,#div7,#div8
+	{
+		height:80px;width:80px;border:1px solid black;
+		background:none;margin:5px;float:left;
+	}
+	</style>
+	<script>
+	window.onload=function()
+	{   
+		var aDiv=document.getElementById('adiv1')
+        var oDiv=aDiv.getElementsByTagName('div')
+        var oBtn=document.getElementsByTagName('input')
+        //以下代码用于使其变色
+		oBtn[0].onmouseover=function()
+		{		
+		   for(var i=0;i<oDiv.length;i++)    //加入for使别的div恢复颜色
+		   {
+		oDiv[i].style.background='none';
+		   }
+		oDiv[0].style.background='mediumvioletred';//从oDiv获取第一个元素
+	    };
+		oBtn[1].onmouseover=function()
+		{
+			for(var i=0;i<oDiv.length;i++)
+		  {
+		oDiv[i].style.background='none';
+		  }
+		oDiv[1].style.background='lightseagreen';
+		};
+		oBtn[2].onmouseover=function()
+		{
+			for(var i=0;i<oDiv.length;i++)
+		  {
+		oDiv[i].style.background='none';
+		  }
+		oDiv[2].style.background='greenyellow';
+		};
+		oBtn[3].onmouseover=function()
+		{
+			for(var i=0;i<oDiv.length;i++)
+		  {
+		oDiv[i].style.background='none';
+		  }
+		oDiv[3].style.background='blueviolet';
+		};
+		//以下代码用于将所有div颜色变灰
+		oBtn[4].onmouseover=function()
+		{
+			for(var i=0;i<oDiv.length;i++)
+			{
+				oDiv[i].style.background='palegreen'
+			}
+		}
+		//以下代码作用是鼠标移出恢复原始颜色
+			for(var i=0;i<oBtn.length;i++)
+			{
+				oBtn[i].onmouseleave=function()
+				{
+					for(var i=0;i<oDiv.length;i++)
+		            {
+		             oDiv[i].style.background='none';
+		            }
+				}
+			}
+	}
+	</script>	
+	</head>
+	<body>
+	<div id="adiv" >
+		<div id="adiv1">
+		  <div id="div1"></div>
+		  <div id="div2"></div>
+		  <div id="div3"></div>
+		  <div id="div4"></div>
+		  <div id="div5"></div>
+		  <div id="div6"></div>
+		  <div id="div7"></div>
+		  <div id="div8"></div>
+		</div>
+	   <div id="allbtn" style="clear: both;">
+	    <input id="btn1" type="button" value="第一个变红";/>
+		<input id="btn2" type="button" value="第二个变蓝";/>
+		<input id="btn3" type="button" value="第三个变绿";/>
+		<input id="btn4" type="button" value="第四个变紫";/>
+		<input id="btn5" type="button" value="全部变青色";/>
+	   </div>
+	</div>
+	</body>
+</html>

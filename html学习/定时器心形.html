@@ -1,0 +1,119 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<title>心</title>
+ 	<style>
+ 		*{padding: 0;margin: 0;}
+ 		#adiv1{height:226px; width:208px;margin:50px auto;border: 2px solid purple;position: relative;}
+ 		.squr{height:20px;width:20px;border:1px dashed #BD84E6;background:none;margin:0.5px; float:left;color:white;transition:background 0.7s;}
+ 		#bar{height: 2px;background:#ACF49E;position: absolute;top: 184px}
+ 		#btn1{width: 209px;margin: 0;background-color:#BD84E6;border-top: 3px solid purple;border-bottom: 2px solid purple;
+ 			border-left: 1px solid purple;position: absolute;top: 186px;color: #3D3DFC;}
+ 		#btn2{border-left: 1px solid purple;background-color:#BD84E6;color: #3D3DFC;margin: 0;position: absolute;top: 206px;width: 209px;}
+ 	</style>
+ 	<script type="text/javascript">
+	window.onload=function(){   
+		var aDiv=document.getElementById('adiv1');  //整体div
+		var btn1=document.getElementById('btn1');   //按钮一
+		var btn2=document.getElementById('btn2');   //按钮二
+		var oDiv=aDiv.getElementsByTagName('div');  //整体div下的所有div
+		var Bar=document.getElementById('bar');     //进度条
+		var myarr=[20,21,23,24,28,29,30,31,32, 33,34,37,38,39,40,41,42,43,47,48, 49,50,51,57,58,59,67];
+		for (var i = 0; i < 72; i++) {               //循环创建节点
+			var aD=document.createElement('div');    //创建节点div并将其存入变量aD                  document.creatElement()
+			aDiv.insertBefore(aD,oDiv[0]);           //在aDiv中插入子节点aD                         appendChild()
+			// aD.innerHTML=i;                       //为便于调试  可将每个div表上序号              .innerHTML=''
+		    }
+		btn1.onclick=function begin(){
+			var pageTimer = {};
+			for(i=0;i<oDiv.length-1;i++){
+				oDiv[i].className='squr';             //将创建的节点aD的class名改为需要的类名        
+			}
+			setInterval(startbar,21);	
+			btn1.onclick=null;					      //开始的时候限制点击
+		    btn1.value='Suprising...';                  //当点击按钮的时候提示加载中...
+			btn1.value=' I love you！';                  //开始变色的时候改变value值...
+		var i=150; var j=1;
+	pageTimer["timer1"] = setTimeout(function () {
+	oDiv[22].style.background='red';},j*i);j++;
+	pageTimer["timer2"] = setTimeout(function () {
+	oDiv[14].style.background='red';},j*i);j++;
+	pageTimer["timer3"] = setTimeout(function () {
+	oDiv[15].style.background='red';},j*i);j++;
+	pageTimer["timer4"] = setTimeout(function () {
+	oDiv[25].style.background='red';},j*i);j++;
+	pageTimer["timer5"] = setTimeout(function () {
+	oDiv[34].style.background='red';},j*i);j++;
+	pageTimer["timer6"] = setTimeout(function () {
+	oDiv[42].style.background='red';},j*i);j++;
+	pageTimer["timer7"] = setTimeout(function () {
+	oDiv[50].style.background='red';},j*i);j++;
+	pageTimer["timer8"] = setTimeout(function () {
+	oDiv[58].style.background='red';},j*i);j++;
+	pageTimer["timer9"] = setTimeout(function () {
+	oDiv[48].style.background='red';},j*i);j++;
+	pageTimer["timer10"] = setTimeout(function () {
+	oDiv[38].style.background='red';},j*i);j++;
+	pageTimer["timer11"] = setTimeout(function () {
+	oDiv[28].style.background='red';},j*i);j++;				
+	pageTimer["timer12"] = setTimeout(function () {
+	oDiv[19].style.background='red';},j*i);j++;
+	pageTimer["timer13"] = setTimeout(function () {
+	oDiv[11].style.background='red';},j*i);j++;
+	pageTimer["timer14"] = setTimeout(function () {
+	oDiv[12].style.background='red';},j*i);j++;
+	pageTimer["timer15"] = setTimeout(function () {
+	oDiv[49].style.background='red';},j*i);j++;
+	pageTimer["timer16"] = setTimeout(function () {
+	oDiv[39].style.background='red';
+	oDiv[40].style.background='red';
+	oDiv[41].style.background='red';},j*i);j++;
+	pageTimer["timer17"] = setTimeout(function () {
+	oDiv[29].style.background='red';
+	oDiv[30].style.background='red';
+	oDiv[31].style.background='red';
+	oDiv[32].style.background='red';
+	oDiv[33].style.background='red';},j*i);j++;
+	pageTimer["timer18"] = setTimeout(function () {
+	oDiv[20].style.background='red';
+	oDiv[21].style.background='red';
+	oDiv[22].style.background='red';
+	oDiv[23].style.background='red';
+	oDiv[24].style.background='red';},j*i);j++;
+	pageTimer["timer19"] = setTimeout(function () {
+	for(var i=0;i<72;i++){
+	oDiv[i].style.background='none';
+	for(var each in pageTimer){
+    clearInterval(pageTimer[each]);
+}
+	}},j*i+1000);j++;
+
+	setInterval(begin,j*i+1200);
+	};
+    btn2.onclick=function(){
+	clearInterval(Begin);                                      //clearInterval  清除计时器
+	location.reload();                                         //刷新当前页面
+	};
+	var bar=0;
+	function startbar(){                                        //进度条的简单制作
+		if(bar<209){
+		Bar.style.width=bar+'px';     //原理是通过将初始宽度为0的div宽度不断增加1px
+		bar++;	                                                 //把该事件写入函数，加定时器，定义初始变量，定时器改变初始变量的值，注意变量一定要写在函数外边
+    	}
+	}
+	if (bar===209) {
+		alert('ss');
+	}    		
+};
+</script>	
+</head>
+<body  background="906249.jpg">
+		<div id="adiv1">
+		    <input id="btn1" type="button" value="Begin";/>
+		    <input id="btn2" type="button" value="Restart";/>
+		    <div id="bar"></div>
+		</div>
+</body>
+</html>
+

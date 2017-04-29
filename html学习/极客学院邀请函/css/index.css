@@ -1,0 +1,14 @@
+*{margin: 0;padding: 0;}
+body{background: #fffafa;}
+#wrap{width: 1080px;margin:0 auto;}
+#header{height: 90px;}
+#logo{float: left;line-height: 95px;margin-right: 60px;}
+#logo a{text-decoration: none;color: #deb887;font-weight: normal;font-size: 30px;}
+#menu{line-height: 90px;float: left;}
+#menu a{color: #9E9EA5;font-weight: bold;text-decoration: none;}
+#menu a:hover{color: #7E7878}
+#header li{float: left;list-style: none;margin-right: 27px}
+#search{float: right;margin-top: 30px;}
+#search input{border-radius: 30px;height: 30px;outline: medium;padding-left: 5px}
+#container{height:800px;background: #faebd7;clear: both;padding: 35px 30px;}
+footer{text-align: center;font-size: 13px;margin-top: 15px;color: #AFA9A9}

@@ -1,0 +1,7 @@
+
+#allbtn
+{width:auto;height:auto;margin:auto 5px 5px -6px;padding:10px;}
+#adiv
+{height: auto;width:400px;}
+#div1,#div2,#div3,#div4
+{height:80px;width:80px;border:1px solid black;background:none;margin:5px;float:left;}
